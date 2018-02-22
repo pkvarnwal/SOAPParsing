@@ -1,4 +1,4 @@
-package constraint.com.xmlparserusingretrofitr.model;
+package com.xmlparse.model;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;

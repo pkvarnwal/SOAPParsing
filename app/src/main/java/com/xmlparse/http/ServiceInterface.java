@@ -1,6 +1,6 @@
-package constraint.com.xmlparserusingretrofitr.http;
+package com.xmlparse.http;
 
-import constraint.com.xmlparserusingretrofitr.model.UsStatesRequestEnvelope;
+import com.xmlparse.model.UsStatesRequestEnvelope;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;

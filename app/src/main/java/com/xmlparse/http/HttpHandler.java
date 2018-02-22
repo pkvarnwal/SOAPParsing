@@ -1,9 +1,8 @@
-package constraint.com.xmlparserusingretrofitr.http;
+package com.xmlparse.http;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

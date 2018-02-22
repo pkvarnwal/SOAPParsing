@@ -1,4 +1,4 @@
-package constraint.com.xmlparserusingretrofitr.http;
+package com.xmlparse.http;
 
 import android.app.Activity;
 
@@ -9,7 +9,7 @@ import org.simpleframework.xml.strategy.Strategy;
 
 import java.util.concurrent.TimeUnit;
 
-import constraint.com.xmlparserusingretrofitr.model.UsStatesRequestEnvelope;
+import com.xmlparse.model.UsStatesRequestEnvelope;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;

@@ -1,28 +1,16 @@
-package constraint.com.xmlparserusingretrofitr;
+package com.xmlparse.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xmlpull.v1.XmlPullParser;
-
-import java.io.IOException;
-import java.io.StringReader;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import constraint.com.xmlparserusingretrofitr.http.DataManager;
-import constraint.com.xmlparserusingretrofitr.http.HttpHandler;
-import constraint.com.xmlparserusingretrofitr.model.UsStatesRequestBody;
-import constraint.com.xmlparserusingretrofitr.model.UsStatesRequestData;
-import constraint.com.xmlparserusingretrofitr.model.UsStatesRequestEnvelope;
+import constraint.com.xmlparserusingretrofitr.R;
+import com.xmlparse.http.DataManager;
+import com.xmlparse.http.HttpHandler;
+import com.xmlparse.model.UsStatesRequestBody;
+import com.xmlparse.model.UsStatesRequestData;
+import com.xmlparse.model.UsStatesRequestEnvelope;
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 public class MainActivity extends AppCompatActivity {
