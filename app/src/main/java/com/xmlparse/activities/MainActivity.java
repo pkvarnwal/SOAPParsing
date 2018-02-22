@@ -1,21 +1,15 @@
 package com.xmlparse.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import constraint.com.xmlparserusingretrofitr.R;
-
 import com.google.gson.Gson;
-import com.xmlparse.http.DataManager;
 import com.xmlparse.http.HttpHandler;
-import com.xmlparse.model.UsStatesRequestBody;
-import com.xmlparse.model.UsStatesRequestData;
-import com.xmlparse.model.UsStatesRequestEnvelope;
-import com.xmlparse.model.loginResponse.SoapEnvelope;
 import com.xmlparse.model.loginResponse.SoapEnvelopeResponse;
 
+import constraint.com.xmlparserusingretrofitr.R;
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,27 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
             }
         }).execute();
-    }
-
-    private void getUsStateInfo() {
-
-        UsStatesRequestEnvelope usStatesRequestEnvelope = new UsStatesRequestEnvelope();
-        UsStatesRequestBody usStatesRequestBody = new UsStatesRequestBody();
-        UsStatesRequestData usStatesRequestData = new UsStatesRequestData();
-        usStatesRequestData.setCity("Alaska");
-        usStatesRequestBody.setUsStatesRequestData(usStatesRequestBody);
-        usStatesRequestEnvelope.setBody(usStatesRequestBody);
-        DataManager.getInstance().requestStateInfo(this, usStatesRequestEnvelope, new DataManager.DataManagerListener() {
-            @Override
-            public void onSuccess(Object response) {
-
-            }
-
-            @Override
-            public void onError(Object error) {
-
-            }
-        });
     }
 
     public String getRequestXML() {

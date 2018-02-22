@@ -1,7 +1,5 @@
 package com.xmlparse.http;
 
-import android.app.Activity;
-
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.convert.AnnotationStrategy;
 import org.simpleframework.xml.core.Persister;
@@ -9,12 +7,8 @@ import org.simpleframework.xml.strategy.Strategy;
 
 import java.util.concurrent.TimeUnit;
 
-import com.xmlparse.model.UsStatesRequestEnvelope;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
@@ -68,24 +62,5 @@ public class DataManager {
         void onSuccess(Object response);
 
         void onError(Object error);
-    }
-
-
-    public void requestStateInfo(Activity activity, UsStatesRequestEnvelope usStatesRequestEnvelope, final DataManagerListener dataManagerListener) {
-        Call<UsStatesRequestEnvelope> call = getService().requestStateInfo(usStatesRequestEnvelope);
-        call.enqueue(new Callback<UsStatesRequestEnvelope>() {
-            @Override
-            public void onResponse(Call<UsStatesRequestEnvelope> call, Response<UsStatesRequestEnvelope> response) {
-                if (response.isSuccessful()) {
-                    response.body();
-                } else dataManagerListener.onError(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<UsStatesRequestEnvelope> call, Throwable t) {
-
-            }
-        });
-
     }
 }

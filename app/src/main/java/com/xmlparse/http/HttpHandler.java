@@ -97,6 +97,5 @@ public class HttpHandler extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         progressDialog.dismiss();
         resultListener.onSuccess(result);
-//        Toast.makeText(mActivity, result, Toast.LENGTH_SHORT).show();
     }
 }
