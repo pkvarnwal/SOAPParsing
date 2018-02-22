@@ -6,11 +6,16 @@ import android.util.Log;
 import android.widget.Toast;
 
 import constraint.com.xmlparserusingretrofitr.R;
+
+import com.google.gson.Gson;
 import com.xmlparse.http.DataManager;
 import com.xmlparse.http.HttpHandler;
 import com.xmlparse.model.UsStatesRequestBody;
 import com.xmlparse.model.UsStatesRequestData;
 import com.xmlparse.model.UsStatesRequestEnvelope;
+import com.xmlparse.model.loginResponse.SoapEnvelope;
+import com.xmlparse.model.loginResponse.SoapEnvelopeResponse;
+
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 public class MainActivity extends AppCompatActivity {
@@ -77,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void parseLoginResponse(String result) {
         XmlToJson xmlToJson = new XmlToJson.Builder(result).build();
+        String convertToString = xmlToJson.toFormattedString();
         Log.d("Data",xmlToJson.toString());
+        SoapEnvelopeResponse soapEnvelopeResponse = new Gson().fromJson(convertToString, SoapEnvelopeResponse.class);
+        if (soapEnvelopeResponse  != null) {
+
+        }
     }
 }
