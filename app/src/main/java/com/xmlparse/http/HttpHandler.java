@@ -19,11 +19,13 @@ public class HttpHandler extends AsyncTask<String, Void, String> {
     private String xmlToSend;
     private GetResultListener resultListener;
     private Activity mActivity;
+    private String mMethodType;
 
-    public HttpHandler(Activity activity, String urlToCall, String requestXML, GetResultListener resultListener) {
+    public HttpHandler(Activity activity, String urlToCall, String methodType, String requestXML, GetResultListener resultListener) {
         this.mActivity = activity;
         this.xmlToSend = requestXML;
         this.urlToCall = urlToCall;
+        this.mMethodType = methodType;
         this.resultListener = resultListener;
     }
 
@@ -47,7 +49,7 @@ public class HttpHandler extends AsyncTask<String, Void, String> {
             url = new URL(urlToCall);
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestProperty("Content-Type", "text/xml; charset=UTF-8");
-            conn.setRequestMethod("POST");
+            conn.setRequestMethod(mMethodType);
             conn.setUseCaches(false);
             conn.setDoInput(true);
             conn.setDoOutput(true);
