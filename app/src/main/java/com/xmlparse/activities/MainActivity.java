@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements AppConstant {
     }
 
     private void parseLoginResponse(String result) {
+        if (result == null) return;
+        
         XmlToJson xmlToJson = new XmlToJson.Builder(result).build();
         String convertToString = xmlToJson.toFormattedString();
         SoapEnvelopeResponse soapEnvelopeResponse = new Gson().fromJson(convertToString, SoapEnvelopeResponse.class);
